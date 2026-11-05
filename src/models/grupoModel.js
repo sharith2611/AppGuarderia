@@ -5,27 +5,27 @@ const db = require('../config/dbConfig')
 class grupo{
 
     getGrupos(callback){
-        const sql = "select id_grupo, nombre_grupo, edad_minima, edad_maxima, estado from grupo";
+        const sql = "select id_grupo, nombre_grupo, edad_minima, edad_maxima, estado from GRUPO";
         db.query(sql,callback);
     }
 
     getGrupoById(id,callback){
-        const sql = "select id_grupo, nombre_grupo, edad_minima, edad_maxima, estado from grupo where id_grupo = ?";
+        const sql = "select id_grupo, nombre_grupo, edad_minima, edad_maxima, estado from GRUPO where id_grupo = ?";
         db.query(sql,[id],callback);
     }
 
     crearGrupo(datos,callback){
-        const sql = "insert into grupo set ?";
+        const sql = "insert into GRUPO set ?";
         db.query(sql,datos,callback);
     }
 
     actualizarGrupo(id,datos,callback){
-        const sql = "update grupo set ? where id_grupo = ?";
+        const sql = "update GRUPO set ? where id_grupo = ?";
         db.query(sql,[datos,id],callback);
     }
 
     eliminarGrupo(id,callback){
-        const sql = "update grupo set estado = 0 where id_grupo = ?";
+        const sql = "update GRUPO set estado = 0 where id_grupo = ?";
         db.query(sql,[id],callback);
     }
 

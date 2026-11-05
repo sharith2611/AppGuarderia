@@ -5,27 +5,27 @@ const db = require('../config/dbConfig')
 class matricula{
 
     getMatriculas(callback){
-        const sql = "select id_matricula, id_nino, id_grupo, fecha_matricula, estado from matricula";
+        const sql = "select id_matricula, id_nino, id_grupo, fecha_matricula, estado from MATRICULA";
         db.query(sql,callback);
     }
 
     getMatriculaById(id,callback){
-        const sql = "select id_matricula, id_nino, id_grupo, fecha_matricula, estado from matricula where id_matricula = ?";
+        const sql = "select id_matricula, id_nino, id_grupo, fecha_matricula, estado from MATRICULA where id_matricula = ?";
         db.query(sql,[id],callback);
     }
 
     crearMatricula(datos,callback){
-        const sql = "insert into matricula set ?";
+        const sql = "insert into MATRICULA set ?";
         db.query(sql,datos,callback);
     }
 
     actualizarMatricula(id,datos,callback){
-        const sql = "update matricula set ? where id_matricula = ?";
+        const sql = "update MATRICULA set ? where id_matricula = ?";
         db.query(sql,[datos,id],callback);
     }
 
     eliminarMatricula(id,callback){
-        const sql = "delete from matricula where id_matricula = ?";
+        const sql = "delete from MATRICULA where id_matricula = ?";
         db.query(sql,[id],callback);
     }
 
