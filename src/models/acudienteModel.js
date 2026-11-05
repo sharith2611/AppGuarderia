@@ -5,19 +5,19 @@ const acudiente = {
 
     // CONSULTAR TODOS LOS ACUDIENTES
     getAcudientes: (callback) => {
-        const sql = "SELECT id_acudiente, nombre, apellido, telefono, email, direccion, estado FROM acudiente";
+        const sql = "SELECT id_acudiente, nombre, apellido, telefono, email, direccion, estado FROM ACUDIENTE";
         db.query(sql, callback);
     },
 
     // CONSULTAR ACUDIENTE POR ID
     getAcudienteById: (id, callback) => {
-        const sql = "SELECT id_acudiente, nombre, apellido, telefono, email, direccion, estado FROM acudiente WHERE id_acudiente = ?";
+        const sql = "SELECT id_acudiente, nombre, apellido, telefono, email, direccion, estado FROM ACUDIENTE WHERE id_acudiente = ?";
         db.query(sql, [id], callback);
     },
 
     // REGISTRAR ACUDIENTE
     createAcudiente: (datos, callback) => {
-        const sql = `INSERT INTO acudiente
+        const sql = `INSERT INTO ACUDIENTE
         (nombre, apellido, telefono, email, direccion, estado)
         VALUES (?, ?, ?, ?, ?, ?)`;
 
@@ -33,7 +33,7 @@ const acudiente = {
 
     // ACTUALIZAR ACUDIENTE
     updateAcudiente: (id, datos, callback) => {
-        const sql = `UPDATE acudiente SET
+        const sql = `UPDATE ACUDIENTE SET
         nombre = ?,
         apellido = ?,
         telefono = ?,
@@ -55,7 +55,7 @@ const acudiente = {
 
     // ELIMINAR ACUDIENTE
     deleteAcudiente: (id, callback) => {
-        const sql = "DELETE FROM acudiente WHERE id_acudiente = ?";
+        const sql = "DELETE FROM ACUDIENTE WHERE id_acudiente = ?";
         db.query(sql, [id], callback);
     }
 
