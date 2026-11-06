@@ -11,7 +11,7 @@ router.get('/getNinos', ninoController.getNinos);
 router.get('/getNinoById/:id', ninoController.getNinoById);
 
 // REGISTRAR NIÑO
-router.post('/createNino', ninoController.createNino);
+router.post('/createNino', ninoController.crearNino);
 
 // ACTUALIZAR NIÑO
 router.put('/updateNino/:id', ninoController.updateNino);
