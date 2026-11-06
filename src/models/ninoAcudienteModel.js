@@ -25,7 +25,7 @@ class ninoAcudiente{
     }
 
     eliminarNinoAcudiente(id,callback){
-        const sql = "update NINO_ACCIDENTE set estado = 0 where id_nino_accidente = ?";
+        const sql = "delete from NINO_ACCIDENTE  where id_nino_accidente = ?";
         db.query(sql,[id],callback);
     }
 
