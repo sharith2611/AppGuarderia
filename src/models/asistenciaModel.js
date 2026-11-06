@@ -14,17 +14,17 @@ const asistencia = {
         db.query(sql, [id], callback);
     },
 
-    crearAsistencia: (datos, callback) => {
+    createAsistencia: (datos, callback) => {
         const sql = "insert into ASISTENCIA set ?";
         db.query(sql, datos, callback);
     },
 
-    actualizarAsistencia: (id, datos, callback) => {
+    updateAsistencia: (id, datos, callback) => {
         const sql = "update ASISTENCIAset ? where id_asistencia = ?";
         db.query(sql, [datos, id], callback);
     },
 
-    eliminarAsistencia: (id, callback) => {
+    deleteAsistencia: (id, callback) => {
         const sql = "delete from ASISTENCIA where id_asistencia = ?";
         db.query(sql, [id], callback);
     }
