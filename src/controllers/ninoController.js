@@ -37,10 +37,10 @@ module.exports = {
     },
 
     // REGISTRAR NIÑO
-    createNino: (req, res) => {
+    crearNino: (req, res) => {
         const datos = req.body;
 
-        ninoModel.createNino(datos, (err, result) => {
+        ninoModel.crearNino(datos, (err, result) => {
             if (err) {
                 res.status(500).json({ error: err.message });
                 return;
