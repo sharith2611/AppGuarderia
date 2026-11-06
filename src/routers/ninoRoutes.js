@@ -14,9 +14,9 @@ router.get('/getNinoById/:id', ninoController.getNinoById);
 router.post('/createNino', ninoController.crearNino);
 
 // ACTUALIZAR NIÑO
-router.put('/updateNino/:id', ninoController.updateNino);
+router.put('/updateNino/:id', ninoController.actualizarNino);
 
 // ELIMINAR NIÑO
-router.delete('/deleteNino/:id', ninoController.deleteNino);
+router.delete('/deleteNino/:id', ninoController.eliminarNino);
 
 module.exports = router;
