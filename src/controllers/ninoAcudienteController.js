@@ -1,11 +1,11 @@
 
-const ninoAccidenteModel = require('../models/ninoModel');
+const ninoAccidenteModel = require('../models/ninoAcudienteModel');
 
 module.exports = {
 
     // CONSULTAR TODAS LAS RELACIONES
-    getNinoAccidentes: (req, res) => {
-        ninoAccidenteModel.getNinoAccidentes((err, result) => {
+    getNinoAcudientes: (req, res) => {
+        ninoAccidenteModel.getNinoAcudientes((err, result) => {
             if (err) {
                 res.status(500).json({ error: err.message });
                 return;
@@ -16,10 +16,10 @@ module.exports = {
     },
 
     // CONSULTAR RELACION POR ID
-    getNinoAccidenteById: (req, res) => {
+    getNinoAcudienteById: (req, res) => {
         const { id } = req.params;
 
-        ninoAccidenteModel.getNinoAccidenteById(id, (err, result) => {
+        ninoAccidenteModel.getNinoAcudienteById(id, (err, result) => {
             if (err) {
                 res.status(500).json({ error: err.message });
                 return;
@@ -37,10 +37,10 @@ module.exports = {
     },
 
     // REGISTRAR RELACION
-    createNinoAccidente: (req, res) => {
+    crearNinoAcudiente: (req, res) => {
         const datos = req.body;
 
-        ninoAccidenteModel.createNinoAccidente(datos, (err, result) => {
+        ninoAccidenteModel.crearNinoAcudiente(datos, (err, result) => {
             if (err) {
                 res.status(500).json({ error: err.message });
                 return;
@@ -54,11 +54,11 @@ module.exports = {
     },
 
     // ACTUALIZAR RELACION
-    updateNinoAccidente: (req, res) => {
+    actualizarNinoAcudiente: (req, res) => {
         const { id } = req.params;
         const datos = req.body;
 
-        ninoAccidenteModel.updateNinoAccidente(id, datos, (err, result) => {
+        ninoAccidenteModel.actualizarNinoAcudiente(id, datos, (err, result) => {
             if (err) {
                 res.status(500).json({ error: err.message });
                 return;
@@ -78,10 +78,10 @@ module.exports = {
     },
 
     // ELIMINAR RELACION
-    deleteNinoAccidente: (req, res) => {
+    eliminarNinoAcudiente: (req, res) => {
         const { id } = req.params;
 
-        ninoAccidenteModel.deleteNinoAccidente(id, (err, result) => {
+        ninoAccidenteModel.eliminarNinoAcudiente(id, (err, result) => {
             if (err) {
                 res.status(500).json({ error: err.message });
                 return;
