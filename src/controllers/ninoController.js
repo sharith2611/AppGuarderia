@@ -54,11 +54,11 @@ module.exports = {
     },
 
     // ACTUALIZAR NIÑO
-    updateNino: (req, res) => {
+    actualizarNino: (req, res) => {
         const { id } = req.params;
         const datos = req.body;
 
-        ninoModel.updateNino(id, datos, (err, result) => {
+        ninoModel.actualizarNino(id, datos, (err, result) => {
             if (err) {
                 res.status(500).json({ error: err.message });
                 return;
@@ -78,10 +78,10 @@ module.exports = {
     },
 
     // ELIMINAR NIÑO
-    deleteNino: (req, res) => {
+    eliminarNino: (req, res) => {
         const { id } = req.params;
 
-        ninoModel.deleteNino(id, (err, result) => {
+        ninoModel.eliminarNino(id, (err, result) => {
             if (err) {
                 res.status(500).json({ error: err.message });
                 return;
