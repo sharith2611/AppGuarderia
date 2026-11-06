@@ -14,17 +14,17 @@ class grupo{
         db.query(sql,[id],callback);
     }
 
-    crearGrupo(datos,callback){
+    createGrupo(datos,callback){
         const sql = "insert into GRUPO set ?";
         db.query(sql,datos,callback);
     }
 
-    actualizarGrupo(id,datos,callback){
+    updateGrupo(id,datos,callback){
         const sql = "update GRUPO set ? where id_grupo = ?";
         db.query(sql,[datos,id],callback);
     }
 
-    eliminarGrupo(id,callback){
+    deleteGrupo(id,callback){
         const sql = "update GRUPO set estado = 0 where id_grupo = ?";
         db.query(sql,[id],callback);
     }
